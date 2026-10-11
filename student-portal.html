@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+
+    <style>
+        /* Include padding/border in element widths so nothing overflows */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Element selector: styles every <body>.
+           max-width + auto margins centre the content on wide screens;
+           padding keeps it away from the edges on small screens. */
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            color: #222222;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 16px;
+            line-height: 1.5;
+        }
+
+        header, footer {
+            text-align: center;
+        }
+
+        /* Larger tap targets for nav links on touch screens */
+        nav a {
+            display: inline-block;
+            padding: 8px 12px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 32px;
+        }
+
+        /* Lets wide tables scroll sideways instead of breaking the page */
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        /* 7.1 Main heading color */
+        h1 {
+            color: blue;
+        }
+
+        /* 7.2 Section heading color */
+        h2 {
+            color: darkgreen;
+        }
+
+        /* Element selector: table borders */
+        table {
+            border-collapse: collapse;
+            background-color: white;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #999999;
+            padding: 6px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e0f0e0;
+        }
+
+        /* Class selector: reusable highlight for important info */
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* ID selector: styles one unique element */
+        #student-name {
+            color: blue;
+        }
+
+        /* Bonus: Top Performer badge */
+        .badge {
+            color: white;
+            background-color: darkorange;
+            padding: 2px 8px;
+            font-size: 0.8em;
+            white-space: nowrap;
+        }
+
+        /* Form controls scale with the screen; 16px stops iOS auto-zoom */
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            max-width: 400px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        /* Bigger, easier-to-tap buttons */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* Phones: slightly smaller text and tighter tables */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            th, td {
+                padding: 6px 8px;
+                font-size: 0.9em;
+            }
+
+            /* Put each form label above its input */
+            label {
+                display: block;
+            }
+
+            /* ...but keep radio/checkbox labels beside their controls */
+            input[type="radio"] + label,
+            input[type="checkbox"] + label {
+                display: inline-block;
+                margin-right: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Portal</h1>
+        <nav>
+            <a href="#home">Home</a> |
+            <a href="#profile">Profile</a> |
+            <a href="#courses">Courses</a> |
+            <a href="#register">Register</a>
+        </nav>
+    </header>
+
+    <main id="home">
+
+        <!-- Part 3: Student Profile -->
+        <section id="profile">
+            <h2>Student Profile</h2>
+
+            <!-- ID selector target + bonus badge (span with a class) -->
+            <h3 id="student-name">Tanay Agarwal <span class="badge">Top Performer</span></h3>
+
+            <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td class="highlight">Tanay Agarwal</td>
+                </tr>
+                <tr>
+                    <th>Student ID</th>
+                    <td>26bcs10783</td>
+                </tr>
+                <tr>
+                    <th>Program</th>
+                    <td class="highlight">BSc in CS and AI</td>
+                </tr>
+                <tr>
+                    <th>Year</th>
+                    <td>1st Year</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>tanay.26bsc10783@sst.scaler.com</td>
+                </tr>
+            </table>
+            </div>
+        </section>
+
+        <!-- Part 4: My Skills (unordered list) -->
+        <section id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Git</li>
+            </ul>
+        </section>
+
+        <!-- Part 5: Weekly Schedule -->
+        <section id="courses">
+            <h2>Weekly Schedule</h2>
+            <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>9:00 AM</th>
+                    <th>11:00 AM</th>
+                    <th>2:00 PM</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>HTML</td>
+                    <td>Mathematics</td>
+                    <td>DSA</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>CSS</td>
+                    <td>DBMS</td>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>JavaScript</td>
+                    <td>DSA</td>
+                    <td>Mathematics</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>DBMS</td>
+                    <td>HTML</td>
+                    <td>Project</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>DSA</td>
+                    <td>CSS</td>
+                    <td>Workshop</td>
+                </tr>
+            </table>
+            </div>
+        </section>
+
+        <!-- Part 6: Course Registration Form -->
+        <section id="register">
+            <h2>Course Registration</h2>
+
+            <form action="#" method="post">
+
+                <h3>Student Information</h3>
+
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </p>
+
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </p>
+
+                <p>
+                    <label for="student-id">Student ID:</label>
+                    <input type="text" id="student-id" name="student_id">
+                </p>
+
+                <h3>Course Selection</h3>
+
+                <p>
+                    <label for="course">Course:</label>
+                    <select id="course" name="course">
+                        <option value="">Select Course</option>
+                        <option value="html-css">HTML &amp; CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="dsa">Data Structures</option>
+                        <option value="dbms">Database Management</option>
+                    </select>
+                </p>
+
+                <h3>Preferred Learning Mode</h3>
+
+                <!-- Same name attribute = one radio group (only one can be selected) -->
+                <p>
+                    <input type="radio" id="online" name="mode" value="online">
+                    <label for="online">Online</label>
+
+                    <input type="radio" id="offline" name="mode" value="offline">
+                    <label for="offline">Offline</label>
+                </p>
+
+                <h3>Skills You Already Know</h3>
+
+                <p>
+                    <input type="checkbox" id="skill-html" name="skills" value="html">
+                    <label for="skill-html">HTML</label>
+
+                    <input type="checkbox" id="skill-css" name="skills" value="css">
+                    <label for="skill-css">CSS</label>
+
+                    <input type="checkbox" id="skill-js" name="skills" value="javascript">
+                    <label for="skill-js">JavaScript</label>
+
+                    <input type="checkbox" id="skill-python" name="skills" value="python">
+                    <label for="skill-python">Python</label>
+                </p>
+
+                <p>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student Portal | Tanay Agarwal</p>
+    </footer>
+
+</body>
+</html>
